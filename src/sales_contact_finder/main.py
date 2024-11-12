@@ -1,12 +1,9 @@
 #!/usr/bin/env python
 import sys
-
 from kinase_research_institution_finder.crew import KinaseResearchInstitutionFinderCrew
 
 # Replace with inputs you want to test with; it will automatically
 # interpolate any tasks and agents information
-
-
 def run():
     """
     Run the crew.
@@ -45,10 +42,57 @@ def run():
             "Neurodegenerative Disease Research Coalition - UVA",
             "Leibniz Institute for Immunotherapy (LIT)",
             "University of Dundee's MRC Protein Phosphorylation and Ubiquitylation Unit (PPU)",
+            "Cold Spring Harbor Laboratory",
+            "Fred Hutchinson Cancer Research Center",
+            "Lund University",
+            "National University of Singapore - Cancer Science Institute",
+            "University of Toronto - Donnelly Centre for Cellular and Biomolecular Research",
+            "University of Queensland - Institute for Molecular Bioscience",
+            "University of Zurich - Institute of Molecular Cancer Research",
+            "National Institute of Advanced Industrial Science and Technology (AIST)",
+            "The Walter and Eliza Hall Institute of Medical Research (WEHI)",
+            "Shanghai Institute of Materia Medica (SIMM), Chinese Academy of Sciences",
+            "Karolinska Institute",
+            "Institute of Cancer Research (ICR)",
+            "Riken Center for Biosystems Dynamics Research",
+            "University of California, San Diego (UCSD) - Moores Cancer Center",
+            "Dana-Farber Cancer Institute",
+            "Broad Institute of MIT and Harvard",
+            "Novartis Institutes for BioMedical Research (NIBR)",
+            "European Molecular Biology Laboratory (EMBL)",
+            "Francis Crick Institute",
+            "Max Planck Institute of Molecular Physiology",
+            "Ludwig Institute for Cancer Research",
+            "Program in Molecular Medicine",
+            "College of Pharmacy",
+            "Department of Molecular and Cell Biology",
+            "Department of Biochemistry and Molecular Medicine",
+            "School of Biochemistry",
+            "Centre for Inflammation Research",
+            "Centre for Cancer Biology",
+            "Department of Cellular & Molecular Pharmacology",
+            "Department of Structural Biology",
+            "Department of Medicine",
+            "Winship Cancer Institute",
+            "Meyer Cancer Center",
+            "Center for Systems Neuroscience",
+            "Cancer Systems Biology Institute",
+            "Herbert Irving Comprehensive Cancer Center",
+            "Yale Cancer Biology Institute",
+            "Drug Discovery Institute",
+            "Department of Pharmacology",
+            "Leslie Dan Faculty of Pharmacy",
+            "Institute for Bioscience and Biotechnology Research",
+            "Calibr-Skaggs Institute",
+            "Institute of Molecular, Cell and Systems Biology",
+            "Paul G. Allen School for Global Health",
+            "Life Sciences Institute",
+            "The Chobanian & Avedisian School of Medicine",
+            "Fritz Lipmann Institute (FLI)",
+            "School of Pharmacy"
         ]
     }
     KinaseResearchInstitutionFinderCrew().crew().kickoff(inputs=inputs)
-
 
 def train():
     """
@@ -59,10 +103,8 @@ def train():
         KinaseResearchInstitutionFinderCrew().crew().train(
             n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs
         )
-
     except Exception as e:
         raise Exception(f"An error occurred while training the crew: {e}")
-
 
 def replay():
     """
@@ -70,10 +112,8 @@ def replay():
     """
     try:
         KinaseResearchInstitutionFinderCrew().crew().replay(task_id=sys.argv[1])
-
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
-
 
 def test():
     """
@@ -84,6 +124,5 @@ def test():
         KinaseResearchInstitutionFinderCrew().crew().test(
             n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs
         )
-
     except Exception as e:
         raise Exception(f"An error occurred while testing the crew: {e}")
